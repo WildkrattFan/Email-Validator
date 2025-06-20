@@ -1,1 +1,0 @@
-import { verifyFormat } from "./utils/checkFormat";

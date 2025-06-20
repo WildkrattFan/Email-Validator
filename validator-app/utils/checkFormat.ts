@@ -5,13 +5,3 @@ export function verifyFormat(email: string){
     return emailFormat.test(email);
 }
 
-export function verifyFormatArray(emails: string[]){
-    let returnArray: boolean[] = [];
-    for(let email of emails){
-        returnArray.push(verifyFormat(email));
-    }
-    if(returnArray.length < 1){
-        return false
-    }
-    return returnArray;
-}

@@ -1,9 +1,36 @@
 {
+  "name": "email-validator",
+  "version": "1.0.0",
+  "description": "[![CI Pipeline](https://github.com/WildkrattFan/Email-Validator/actions/workflows/CI.yml/badge.svg)](https://github.com/WildkrattFan/Email-Validator/actions/workflows/CI.yml)\r Validates Email addresses for business purposes",
+  "homepage": "https://github.com/WildkrattFan/Email-Validator#readme",
+  "bugs": {
+    "url": "https://github.com/WildkrattFan/Email-Validator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildkrattFan/Email-Validator.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "serve": "node dist/index.js"
+  },
+  "dependencies": {
+    "@microsoft/kiota-bundle": "^1.0.0-preview.96",
+    "express": "^5.1.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "@types/node": "^24.0.3",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   }
 }
