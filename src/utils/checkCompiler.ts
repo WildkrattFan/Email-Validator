@@ -1,6 +1,9 @@
 import { checkMXRecords } from "./MXCheck";
 import { verifyFormat } from "./checkFormat";
 
+const gibberish = require("gibberish-detective")({useCache: false});
+gibberish.set("useCache", true)
+
 export async function compileChecks(email: string){
     let formatCheck = verifyFormat(email)
 
@@ -19,7 +22,13 @@ export async function compileChecks(email: string){
             }
         }
         else{
-            return mxCheck
+
+            let gibberishResult = gibberish.detect(email)
+
+            return {
+                mxCheck,
+                likelyGibberish: gibberishResult
+            }
         }
     
     }
